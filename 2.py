@@ -99,7 +99,8 @@ class Game(object):
                     if event.key == pygame.K_ESCAPE:
                         self.done = True
                 elif event.type == pygame.KEYUP:
-                    self.movable_object.ranomize()
+                    if event.key == pygame.K_SPACE:
+                        self.movable_object.ranomize()
 
             self.screen.blit(self.background, self.background_rect)
             self.mov_group.draw(self.screen)
